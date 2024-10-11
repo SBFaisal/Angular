@@ -1,3 +1,0 @@
-This Repo has all the Projects related to Angular.
-
-1. Learning Angular
