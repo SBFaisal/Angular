@@ -1,1 +1,32 @@
-<app-attribute-directives></app-attribute-directives>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="add-emp">Add Emp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="data-binding">Data Bindings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="structural-dir">Structural Dir</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="attribute-dir">Attribute Dir</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input type="text" class="form-control me-2" type="text" placeholder="Search">
+                <button type="submit" class="btn btn-primary" type="button">Submit</button>
+            </form>
+        </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
