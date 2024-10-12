@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-3">
+        One way: ts to html (DataBinding)
+    </div>
+    <div class="col-3">
+        One way: html to ts (Event Binding)
+    </div>
+    <div class="col-2">
+        Two way data Binding.
+    </div>
+    <div class="col-2">
+        Signal
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <div class="col">
+            <div class="col-4">
+                Interpolation
+                <h4>{{courseName}}</h4>
+                <input type="text" value="{{courseName}}" placeholder="Couese">
+                <input type="{{inputType}}" value="checked">
+            </div>
+            <div class="col-4">
+                Propert Binding!
+                <div [class]="myClassName">Hello</div>
+            </div>
+            <div class="col-4">
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="col">
+            <div class="col-4">
+                <button class="btn btn-success " (click)="showMessage('Hello from btn')">Click</button>
+            </div>
+            <div class="col-4">
+                <span class="btn btn-danger" (click)="showMessage('Hello from span')">SpanBtn</span>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-success " (click)="changeCouseName()">ChangeCourse</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="col">
+            <div class="row">
+                <input type="text" [(ngModel)]="courseName" > {{courseName}}
+            </div>
+            <div class="row">
+                <select [(ngModel)]="state">
+                    <option value="">Select</option>
+                    <option value="UP">UP</option>
+                    <option value="MP">MP</option>
+                    <option value="UK">UK</option>
+                </select>
+            </div>
+            <div class="row">
+                <input type="checkbox" [(ngModel)]="isIndian">
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="col">
+            {{fullName()}}
+        </div>
+    </div>
+</div>
