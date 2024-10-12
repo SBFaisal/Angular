@@ -4,11 +4,12 @@ import { AddEmployeeComponent } from './components/add-employee/add-employee.com
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { DatabindingComponent } from './components/databinding/databinding.component';
 import { StructuralDirectivesComponent } from './components/Directives/structural-directives/structural-directives.component';
+import { AttributeDirectivesComponent } from './components/Directives/attribute-directives/attribute-directives.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,StructuralDirectivesComponent],
+  imports: [RouterOutlet,AttributeDirectivesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
