@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
-import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { StructuralDirectivesComponent } from './components/Directives/structural-directives/structural-directives.component';
 import { AttributeDirectivesComponent } from './components/Directives/attribute-directives/attribute-directives.component';
 import { DatabindingComponent } from './components/databinding/databinding.component';
+import { IfElseComponent } from './components/controlflow/if-else/if-else.component';
+import { ForComponent } from './components/controlflow/for/for.component';
+import { SwitchComponent } from './components/controlflow/switch/switch.component';
 
 export const routes: Routes = [
     {
@@ -21,5 +23,17 @@ export const routes: Routes = [
     {
         path:'attribute-dir',
         component: AttributeDirectivesComponent
+    },
+    {
+        path:'if-else',
+        component: IfElseComponent
+    },
+    {
+        path:'for',
+        component: ForComponent
+    },
+    {
+        path:'switch',
+        component: SwitchComponent
     }
 ];

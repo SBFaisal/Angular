@@ -1,0 +1,46 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded" >
+    <h1>Switch</h1>
+</div>
+
+<div class="row pt-3">
+    <div class="col-3">
+        <div class="p-3">
+            <div class="row">
+                <div class="col-5">
+                    <div class="col-5">
+                        <select [(ngModel)]="selectedState">
+                            <option value="">Select Option</option>
+                            @for (state of states; track $index) {
+                                <option [value]="state">{{state}}</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3">
+            <div class="row">
+                        Full form:
+                        @switch (selectedState) {
+                            @case ('UP'){
+                                Uttar Pradesh
+                            }
+                            @case ('MP'){
+                                Madhya Pradesh
+                            }
+                            @case ('UK'){
+                                Uttara Khand
+                            }
+                            @case ('Goa'){
+                                GOA
+                            }
+                            @default {
+                                Not Found
+                            }
+                        }
+            </div>
+        </div>
+    </div>
+</div>
