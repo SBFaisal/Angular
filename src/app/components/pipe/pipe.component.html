@@ -1,0 +1,62 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded" >
+    <h1>Pipe</h1>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <div class="p-3">
+            <div class="row p-2" >
+                Before Pipe: {{name}}
+                <br>
+                After Pipe: {{name | uppercase}}
+            </div>
+            <div class="row p-2" >
+                Before Pipe: {{title}}
+                <br>
+                After Pipe: {{title | titlecase}}
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3">
+            <div class="row p-2" >
+                Before Pipe: {{details}}
+                <br>
+                After Pipe: {{details | json }}
+            </div>
+            <div class="row p-2" >
+                Before Pipe: {{time}}
+                <br>
+                After Pipe: {{time | date:'dd-MMM-yy hh:mm:ss'}}
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3">
+            <div class="row p-2" >
+                Before Pipe: 
+                <br>
+                After Pipe:
+            </div>
+            <div class="row p-2" >
+                Before Pipe: 
+                <br>
+                After Pipe:
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3">
+            <div class="row p-2" >
+                Before Pipe: {{state}}
+                <br>
+                After Pipe: {{state | na}}
+            </div>
+            <div class="row p-2" >
+                Before Pipe: 
+                <br>
+                After Pipe:
+            </div>
+        </div>
+    </div>
+</div>

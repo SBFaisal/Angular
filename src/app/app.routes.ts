@@ -6,6 +6,7 @@ import { DatabindingComponent } from './components/databinding/databinding.compo
 import { IfElseComponent } from './components/controlflow/if-else/if-else.component';
 import { ForComponent } from './components/controlflow/for/for.component';
 import { SwitchComponent } from './components/controlflow/switch/switch.component';
+import { PipeComponent } from './components/pipe/pipe.component';
 
 export const routes: Routes = [
     {
@@ -35,5 +36,9 @@ export const routes: Routes = [
     {
         path:'switch',
         component: SwitchComponent
+    },
+    {
+        path: 'pipe',
+        component: PipeComponent
     }
 ];
