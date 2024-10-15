@@ -1,0 +1,61 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded" >
+    <h1>Template Form</h1>
+    <p>Using ngModel</p>
+</div>
+
+<form class="row g-3 needs-validation" #form="ngForm">
+    <div class="col-md-3">
+      <label class="form-label">First name</label>
+      <input type="text" name="firstName" #fName="ngModel" class="form-control" [(ngModel)]="studentObj.firstName" placeholder="First Name" required minlength="3">
+      <div class="text-danger">
+        @if ((fName.touched || fName.dirty) && fName.errors?.['required']) {
+            <span>This is required</span>
+        }@else if((fName.touched || fName.dirty) && fName.errors?.['minlength']){
+            <span>Minimum 3 characters</span>
+        }
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Last name</label>
+      <input type="text" class="form-control" name="lastName" [(ngModel)]="studentObj.lastName" placeholder="Last Name">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Username</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" >&#64;</span>
+        <input type="text" #uName="ngModel" class="form-control" name="userName" [(ngModel)]="studentObj.username" placeholder="Email" aria-describedby="inputGroupPrepend">
+      </div>
+    </div>
+    <div class="col-md-5">
+      <label class="form-label">City</label>
+      <input type="text" class="form-control" name="city" [(ngModel)]="studentObj.city" placeholder="City">
+    </div>
+    <div class="col-md-2">
+      <label class="form-label">State</label>
+      <select class="form-select" name="city" [(ngModel)]="studentObj.state">
+        <option selected disabled value="">Select State</option>
+        <option>MP</option>
+        <option>UP</option>
+        <option>AP</option>
+        <option>UK</option>
+        <option>Goa</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label class="form-label">Zip</label>
+      <input type="text" class="form-control" name="zipcode" [(ngModel)]="studentObj.zipcode" placeholder="Zip Code">
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" name="isAccepted" [(ngModel)]="studentObj.isAccepted" type="checkbox">
+        <label class="form-check-label">
+          Agree to terms and conditions
+        </label>
+      </div>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-secondary" (click)="onReset()" type="submit">Reset Form</button>
+        <button class="btn btn-primary mx-2" [disabled]="form.invalid" (click)="onSubmit()" type="submit">Submit form</button>
+    </div>
+    <div class="col-4">{{details | json}}</div>
+  </form>
