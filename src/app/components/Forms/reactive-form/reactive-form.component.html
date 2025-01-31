@@ -1,0 +1,62 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded" >
+    <h1>Reactive Form</h1>
+    <p>Create Form & Validation</p>
+</div>
+
+<form class="row g-3" [formGroup]="studentObj">
+    <div class="col-md-3">
+      <label class="form-label">First name</label>
+      <input type="text" formControlName="firstName" class="form-control">
+      <div class="text-danger">
+        @if(studentObj.controls['firstName'].touched && studentObj.controls['firstName'].errors?.['required']){
+          <span>This is required</span>
+        }
+        @else if(studentObj.controls['firstName'].touched && studentObj.controls['firstName'].errors?.['minlength']){
+          <span>Min 3 characters required</span>
+        }
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Last name</label>
+      <input type="text" formControlName="lastName" class="form-control">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Username</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" >&#64;</span>
+        <input type="text" formControlName="userName" class="form-control" aria-describedby="inputGroupPrepend">
+      </div>
+    </div>
+    <div class="col-md-5">
+      <label class="form-label">City</label>
+      <input type="text" formControlName="city" class="form-control" >
+    </div>
+    <div class="col-md-2">
+      <label class="form-label">State</label>
+      <select class="form-select" formControlName="state" lass="form-select"  >
+        <option selected disabled value="">Select State</option>
+        <option>MP</option>
+        <option>UP</option>
+        <option>AP</option>
+        <option>UK</option>
+        <option>Goa</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label class="form-label">Zip</label>
+      <input type="text" formControlName="zipcode" class="form-control" >
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" formControlName="isAccepted">
+        <label class="form-check-label">
+          Agree to terms and conditions
+        </label>
+      </div>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-secondary" (click)="onReset()" type="submit">Reset Form</button>
+        <button class="btn btn-primary mx-2" (click)="onSave()" type="buttun" [disabled]="studentObj.invalid">Submit form</button>
+    </div>
+    <div class="col-4">{{details | json}}</div>
+  </form>
