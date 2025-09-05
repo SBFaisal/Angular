@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="col-3">
-        <div class="p-3">
+        <div class="p-3">String Pipes <br>
             <div class="row p-2" >
                 Before Pipe: {{name}}
                 <br>
@@ -19,12 +19,12 @@
     </div>
     <div class="col-3">
         <div class="p-3">
-            <div class="row p-2" >
+            <div class="row p-2" > Json Pipe <br>
                 Before Pipe: {{details}}
                 <br>
                 After Pipe: {{details | json }}
             </div>
-            <div class="row p-2" >
+            <div class="row p-2" >Date Pipe <br>
                 Before Pipe: {{time}}
                 <br>
                 After Pipe: {{time | date:'dd-MMM-yy hh:mm:ss'}}
@@ -32,11 +32,11 @@
         </div>
     </div>
     <div class="col-3">
-        <div class="p-3">
+        <div class="p-3"> Async Pipe & Pipe Chaining <br>
             <div class="row p-2" >
-                Before Pipe: 
+                Before Pipe: {{currentTime}}
                 <br>
-                After Pipe:
+                After Pipe: {{currentTime | async | date:'hh:mm:ss'}}
             </div>
             <div class="row p-2" >
                 Before Pipe: 
@@ -46,16 +46,11 @@
         </div>
     </div>
     <div class="col-3">
-        <div class="p-3">
-            <div class="row p-2" >
+        <div class="p-3"> Custom Pipe <br>
+            <div class="row p-2" > when state is empty NA otherwise value<br>
                 Before Pipe: {{state}}
                 <br>
                 After Pipe: {{state | na}}
-            </div>
-            <div class="row p-2" >
-                Before Pipe: 
-                <br>
-                After Pipe:
             </div>
         </div>
     </div>
