@@ -1,13 +1,13 @@
 
 <div class="row mt-5">
     <div class="col-2">
-        <button class="btn btn-primary" (click)="fetchData()">Fetch Data</button>
+        <button class="btn btn-primary" (click)="fetchData()">Fetch Todo Data</button>
     </div>
     <div class="col-3">
         <select class="form-select">
             @for(item of data; track $index)
             {
-                <option [value]="item.name">{{item.name}}</option>
+                <option [value]="item.name">{{item.title}}</option>
             }
         </select>
     </div>
@@ -22,6 +22,20 @@
     </div>
 </div>
 
+
+<div class="row mt-5">
+    <div class="col-2">
+        <button class="btn btn-primary" (click)="fetchUserData()">Get using Service</button>
+    </div>
+    <div class="col-3">
+        <select class="form-select">
+            @for(item of userData; track $index)
+            {
+                <option [value]="item.name">{{item.name}}</option>
+            }
+        </select>
+    </div>
+</div>
 <!-- <div class="row">
     {{ data | json }}
 </div> -->

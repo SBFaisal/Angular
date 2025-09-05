@@ -1,6 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { UserService } from '../../service/user.service';
 
 @Component({
   selector: 'app-apihttp-client',
@@ -13,14 +14,14 @@ export class APIHttpClientComponent implements OnInit {
   ngOnInit(): void {
     this.fetchData();
   }
-  constructor(private http: HttpClient) { }
+  constructor(private userService: UserService) { }
 
-
+  http = inject(HttpClient)
 
   // Get API
   data: any[] = [];
   fetchData() {
-    this.http.get('https://jsonplaceholder.typicode.com/users')
+    this.http.get('https://jsonplaceholder.typicode.com/todos')
       .subscribe((d:any) => {
         this.data = d;
       },
@@ -47,5 +48,18 @@ export class APIHttpClientComponent implements OnInit {
         alert(err.message);
       }
     )
+  }
+
+  // Using Service
+  userData: any[] = [];
+  fetchUserData() {
+    this.userService.getUsers()
+      .subscribe((res:any) => {
+        this.userData = res;
+      },
+        err => {
+          alert(err.message);
+        }
+      )
   }
 }
