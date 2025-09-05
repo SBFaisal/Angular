@@ -9,6 +9,7 @@ import { SwitchComponent } from './components/controlflow/switch/switch.componen
 import { PipeComponent } from './components/pipe/pipe.component';
 import { TemplateFormComponent } from './components/Forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './components/Forms/reactive-form/reactive-form.component';
+import { APIHttpClientComponent } from './components/apihttp-client/apihttp-client.component';
 
 export const routes: Routes = [
     {
@@ -50,5 +51,9 @@ export const routes: Routes = [
     {
         path: 'reactive-form',
         component: ReactiveFormComponent
+    },
+    {
+        path: 'API-HttpClient',
+        component: APIHttpClientComponent
     }
 ];

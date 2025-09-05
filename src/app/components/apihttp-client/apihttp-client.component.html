@@ -1,0 +1,29 @@
+
+<div class="row mt-5">
+    <div class="col-2">
+        <button class="btn btn-primary" (click)="fetchData()">Fetch Data</button>
+    </div>
+    <div class="col-3">
+        <select class="form-select">
+            @for(item of data; track $index)
+            {
+                <option [value]="item.name">{{item.name}}</option>
+            }
+        </select>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-2">
+        <button class="btn btn-primary" (click)="sendData()">Send Data</button>
+    </div>
+    <div class="col-3">
+        {{postAPIResponseData | json}}
+    </div>
+</div>
+
+<!-- <div class="row">
+    {{ data | json }}
+</div> -->
+
+
