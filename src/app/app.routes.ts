@@ -11,6 +11,8 @@ import { TemplateFormComponent } from './components/Forms/template-form/template
 import { ReactiveFormComponent } from './components/Forms/reactive-form/reactive-form.component';
 import { APIHttpClientComponent } from './components/apihttp-client/apihttp-client.component';
 import { NgTemplateComponent } from './components/ng-template/ng-template.component';
+import { NgContainerTestComponent } from './components/ng-container-test/ng-container-test.component';
+import { ViewChildDemoComponent } from './components/decorators/view-child-demo/view-child-demo.component';
 
 export const routes: Routes = [
     {
@@ -60,5 +62,13 @@ export const routes: Routes = [
     {
         path: 'ng-template',
         component: NgTemplateComponent
+    },
+    {
+        path: 'ng-container',
+        component: NgContainerTestComponent
+    },
+    {
+        path: 'view-child',
+        component: ViewChildDemoComponent
     }
 ];
