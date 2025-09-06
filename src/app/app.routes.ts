@@ -10,6 +10,7 @@ import { PipeComponent } from './components/pipe/pipe.component';
 import { TemplateFormComponent } from './components/Forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './components/Forms/reactive-form/reactive-form.component';
 import { APIHttpClientComponent } from './components/apihttp-client/apihttp-client.component';
+import { NgTemplateComponent } from './components/ng-template/ng-template.component';
 
 export const routes: Routes = [
     {
@@ -55,5 +56,9 @@ export const routes: Routes = [
     {
         path: 'API-HttpClient',
         component: APIHttpClientComponent
+    },
+    {
+        path: 'ng-template',
+        component: NgTemplateComponent
     }
 ];
