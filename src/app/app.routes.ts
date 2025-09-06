@@ -15,6 +15,7 @@ import { NgContainerTestComponent } from './components/ng-container-test/ng-cont
 import { ViewChildDemoComponent } from './components/decorators/view-child-demo/view-child-demo.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { authGuard } from './gaurds/auth.guard';
 
 export const routes: Routes = [
     {
@@ -32,7 +33,8 @@ export const routes: Routes = [
         children: [
             {
                 path: 'add-emp',
-                component: AddEmployeeComponent
+                component: AddEmployeeComponent,
+                canActivate: [authGuard]
             },
             {
                 path: 'data-binding',
