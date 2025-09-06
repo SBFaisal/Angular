@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { AlertComponent } from '../../reusableComponents/alert/alert.component';
 
 @Component({
   selector: 'app-attribute-directives',
   standalone: true,
-  imports: [CommonModule,FormsModule,RouterLink],
+  imports: [CommonModule,FormsModule,RouterLink, AlertComponent],
   templateUrl: './attribute-directives.component.html',
   styleUrl: './attribute-directives.component.css'
 })

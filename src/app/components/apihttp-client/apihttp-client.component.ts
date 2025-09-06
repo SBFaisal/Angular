@@ -2,17 +2,18 @@ import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { UserService } from '../../service/user.service';
+import { CustomButtonComponent } from '../reusableComponents/custom-button/custom-button.component';
 
 @Component({
   selector: 'app-apihttp-client',
   standalone: true,
-  imports: [JsonPipe],
+  imports: [JsonPipe, CustomButtonComponent],
   templateUrl: './apihttp-client.component.html',
   styleUrl: './apihttp-client.component.css'
 })
 export class APIHttpClientComponent implements OnInit {
   ngOnInit(): void {
-    this.fetchData();
+    this.fetchUserData();
   }
   constructor(private userService: UserService) { }
 
@@ -62,4 +63,10 @@ export class APIHttpClientComponent implements OnInit {
         }
       )
   }
+
+  callThroughChildComponent(data: any) 
+  {
+    alert("Button clicked " + data);
+  }
+
 }

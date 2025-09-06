@@ -4,6 +4,8 @@
     <button class="btn btn-primary" (click)="navigateToAttribute()">Go to Attribute </button>
 </div>
 
+<app-alert [alertMessage]="'Warning'" [alertType]="'alert alert-warning'"></app-alert>
+
 <div class="row pt-3">
     <div class="col-3">
         <div *ngIf="isDiv1Visible" class="bg-danger p-3 text-center ">
