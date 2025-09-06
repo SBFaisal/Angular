@@ -11,4 +11,6 @@ export class UserService {
   getUsers() {
     return this.httpClient.get(`${this.apiUrl}users`);
   }
+
+  // We can create some custom methods apart from API calls.
 }
