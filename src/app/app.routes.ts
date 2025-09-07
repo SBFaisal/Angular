@@ -11,54 +11,84 @@ import { TemplateFormComponent } from './components/Forms/template-form/template
 import { ReactiveFormComponent } from './components/Forms/reactive-form/reactive-form.component';
 import { APIHttpClientComponent } from './components/apihttp-client/apihttp-client.component';
 import { NgTemplateComponent } from './components/ng-template/ng-template.component';
+import { NgContainerTestComponent } from './components/ng-container-test/ng-container-test.component';
+import { ViewChildDemoComponent } from './components/decorators/view-child-demo/view-child-demo.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { authGuard } from './gaurds/auth.guard';
 
 export const routes: Routes = [
     {
-        path:'add-emp',
-        component: AddEmployeeComponent
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
     },
     {
-        path:'data-binding',
-        component: DatabindingComponent
+        path: 'login',
+        component: LoginComponent
     },
     {
-        path:'structural-dir',
-        component: StructuralDirectivesComponent
+        path: '',
+        component: LayoutComponent,
+        children: [
+            {
+                path: 'add-emp',
+                component: AddEmployeeComponent,
+                canActivate: [authGuard]
+            },
+            {
+                path: 'data-binding',
+                component: DatabindingComponent
+            },
+            {
+                path: 'structural-dir',
+                component: StructuralDirectivesComponent
+            },
+            {
+                path: 'attribute-dir',
+                component: AttributeDirectivesComponent
+            },
+            {
+                path: 'if-else',
+                component: IfElseComponent
+            },
+            {
+                path: 'for',
+                component: ForComponent
+            },
+            {
+                path: 'switch',
+                component: SwitchComponent
+            },
+            {
+                path: 'pipe',
+                component: PipeComponent
+            },
+            {
+                path: 'template-form',
+                component: TemplateFormComponent
+            },
+            {
+                path: 'reactive-form',
+                component: ReactiveFormComponent
+            },
+            {
+                path: 'API-HttpClient',
+                component: APIHttpClientComponent
+            },
+            {
+                path: 'ng-template',
+                component: NgTemplateComponent
+            },
+            {
+                path: 'ng-container',
+                component: NgContainerTestComponent
+            },
+            {
+                path: 'view-child',
+                component: ViewChildDemoComponent
+            }
+        ]
     },
-    {
-        path:'attribute-dir',
-        component: AttributeDirectivesComponent
-    },
-    {
-        path:'if-else',
-        component: IfElseComponent
-    },
-    {
-        path:'for',
-        component: ForComponent
-    },
-    {
-        path:'switch',
-        component: SwitchComponent
-    },
-    {
-        path: 'pipe',
-        component: PipeComponent
-    },
-    {
-        path: 'template-form',
-        component: TemplateFormComponent
-    },
-    {
-        path: 'reactive-form',
-        component: ReactiveFormComponent
-    },
-    {
-        path: 'API-HttpClient',
-        component: APIHttpClientComponent
-    },
-    {
-        path: 'ng-template',
-        component: NgTemplateComponent
-    }
+
 ];

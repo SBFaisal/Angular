@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="col-8">
+    <h3>ng-container</h3>
+    <p>
+      The <code>&lt;ng-container&gt;</code> is a logical container that can be
+      used to group elements without adding extra nodes to the DOM. It is
+      particularly useful when you want to apply structural directives (like
+      *ngIf, *ngFor) without introducing additional HTML elements.
+    </p>
+    <p>
+      In this example, we use <code>&lt;ng-container&gt;</code> to conditionally
+      render a list of items. If the list is empty, a message is displayed
+      instead.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <button class="btn btn-success" (click)="loadUserData()">Load Data</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="isApiRunning">
+          <tr>
+            <td colspan="4" class="text-center">
+              <div class="spinner-grow text-primary" role="status">
+              </div>
+              <div class="spinner-grow text-secondary" role="status">
+              </div>
+              <div class="spinner-grow text-success" role="status">
+              </div>
+              <div class="spinner-grow text-danger" role="status">
+              </div>
+              <div class="spinner-grow text-warning" role="status">
+              </div>
+              <div class="spinner-grow text-info" role="status">
+              </div>
+              <div class="spinner-grow text-light" role="status">
+              </div>
+              <div class="spinner-grow text-dark" role="status">
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+        <ng-container *ngIf="!isApiRunning">
+          <tr *ngFor="let user of userList">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-3">
+    <ng-container *ngTemplateOutlet="myTemplate">
+
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #myTemplate>
+    <p>Hi, from Template</p>
+</ng-template>
